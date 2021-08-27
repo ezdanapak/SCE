@@ -84,8 +84,8 @@
             maxZoom: 28,
             minZoom: 6
         }).fitBounds([
-            [36.84683962168968, 35.46441187763965],
-            [46.03450068910874, 52.4922103892563]
+            [33.91792463898517, 25.2076411587391],
+            [52.293246773823284, 59.263238181972405]
         ]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a> &middot <a href="https://greenalt.org/" target="_blank">greenalt</a>');
@@ -95,7 +95,9 @@
                 location: 'smart'
             }
         });
+        var bounds_group = new L.featureGroup([]);
 
+        function setBounds() {}
         map.createPane('pane_OSMStandard_0');
         map.getPane('pane_OSMStandard_0').style.zIndex = 400;
         var layer_OSMStandard_0 = L.tileLayer('http://tile.openstreetmap.org/{z}/{x}/{y}.png', {
