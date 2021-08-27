@@ -64,12 +64,12 @@
     <script>
         /*Map Creator GIS enthusiast Giorgi Kapanadze
 
-                                                                                                                                                                                                                                                                                            kapan.gio777@gmail.com
-                                                                                                                                                                                                                                                                                            MEDIUM: https://kapanadze.medium.com/ 
-                                                                                                                                                                                                                                                                                            GITHUB: https://github.com/kapannn 
-                                                                                                                                                                                                                                                                                            OBSERVABLE: https://observablehq.com/@kapannn 
-                                                                                                                                                                                                                                                                                            DEV: https://dev.to/kapanadze
-                                                                                                                                                                                                                                                                                                                                                                                        */
+                                                                                                                                                                                                                                                                                                    kapan.gio777@gmail.com
+                                                                                                                                                                                                                                                                                                    MEDIUM: https://kapanadze.medium.com/ 
+                                                                                                                                                                                                                                                                                                    GITHUB: https://github.com/kapannn 
+                                                                                                                                                                                                                                                                                                    OBSERVABLE: https://observablehq.com/@kapannn 
+                                                                                                                                                                                                                                                                                                    DEV: https://dev.to/kapanadze
+                                                                                                                                                                                                                                                                                                                                                                                                */
         // MAP with plugins
 
 
@@ -83,10 +83,14 @@
             zoomControl: true,
             maxZoom: 28,
             minZoom: 6
-        }).fitBounds([
-            [29.87280490901613, 17.58305886984498],
-            [56.56231329148346, 67.0476144053511]
-        ]);
+        })
+        var bounds_group = new L.featureGroup([]);
+
+        function setBounds() {
+            if (bounds_group.getLayers().length) {
+                map.fitBounds(bounds_group.getBounds());
+            }
+        }
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a> &middot <a href="https://greenalt.org/" target="_blank">greenalt</a>');
         var autolinker = new Autolinker({
