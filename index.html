@@ -83,14 +83,10 @@
             zoomControl: true,
             maxZoom: 28,
             minZoom: 6
-        })
-        var bounds_group = new L.featureGroup([]);
-
-        function setBounds() {
-            if (bounds_group.getLayers().length) {
-                map.fitBounds(bounds_group.getBounds());
-            }
-        }
+        }).fitBounds([
+            [36.84683962168968, 35.46441187763965],
+            [46.03450068910874, 52.4922103892563]
+        ]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a> &middot <a href="https://greenalt.org/" target="_blank">greenalt</a>');
         var autolinker = new Autolinker({
