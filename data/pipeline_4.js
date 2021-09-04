@@ -80,7 +80,7 @@ var json_pipeline_4 = {
                     ]
                 ]
             }
-        },
+        }
 
     ]
 }
